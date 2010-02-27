@@ -105,3 +105,12 @@ end
 class Question < ActiveRecord::Base
   has_friendly_id :name, :use_slug => true
 end
+
+# A model that uses a custom method to get the text to slug
+class CustomMethod < ActiveRecord::Base
+  has_friendly_id :custom_name, :use_slug => true
+
+  def custom_name
+    name
+  end
+end
